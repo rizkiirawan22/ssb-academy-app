@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn () => redirect()->route('login'));
+Route::get('/', fn () => view('frontend.home'));
+Route::get('/login', fn () => redirect()->route('login'));
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+
     Route::middleware(['role:admin'])->group(function () {
         Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin']);
     });
