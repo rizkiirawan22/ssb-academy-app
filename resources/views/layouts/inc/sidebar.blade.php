@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-        <img src="{{ asset('img/logo.svg') }}" alt="SSB Akademi" class="brand-image elevation-3" style="opacity: .8">
+        <img src="{{ asset('img/logo.png') }}" alt="SSB Akademi" class="brand-image elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SSB Akademi</span>
     </a>
 
