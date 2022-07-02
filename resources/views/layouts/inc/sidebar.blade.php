@@ -20,18 +20,19 @@
                     </a>
                 </li>
                 <li class="nav-item{{ isset($menu) ? ' ' . $menu : '' }}">
-                    <a href="" class="nav-link{{ isset($master) ? ' ' . $master : '' }}">
+                    <a href="" class="nav-link{{ isset($data) ? ' ' . $data : '' }}">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                            Master Data
+                            Data
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
-                                <i class="fas fa-bars nav-icon"></i>
-                                <p>Anggota</p>
+                            <a href="{{ route('admin.pelatih.index') }}"
+                                class="nav-link{{ isset($coach) ? ' ' . $coach : '' }}">
+                                <i class="fas fa-list-alt nav-icon"></i>
+                                <p>Pelatih</p>
                             </a>
                         </li>
                     </ul>
