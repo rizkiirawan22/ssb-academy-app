@@ -17,8 +17,8 @@ class CoachController extends Controller
                 ->of($model)
                 ->addIndexColumn()
                 ->addColumn('action', function ($model) {
-                    $btn = '<button type="button" id="coachEdit" class="btn btn-warning btn-sm" value="' . $model->id . '"><i class="fas fa-pencil-alt"></i></button>';
-                    $btn = $btn . '<button type="button" id="coachDelete" class="btn btn-danger btn-sm" value="' . $model->id . '"><i class="fas fa-trash"></i></button>';
+                    $btn = '<button type="button" id="edit" class="btn btn-warning btn-sm" value="' . $model->id . '"><i class="fas fa-pencil-alt"></i></button>';
+                    $btn = $btn . '<button type="button" id="delete" class="btn btn-danger btn-sm" value="' . $model->id . '"><i class="fas fa-trash"></i></button>';
                     return $btn;
                 })
                 ->rawColumns(['action'])
