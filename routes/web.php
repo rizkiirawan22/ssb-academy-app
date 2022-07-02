@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CoachController as AdminCoachController;
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['role:admin'])->group(function () {
         Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin']);
+        Route::resource('admin/artikel', AdminArticleController::class, ['as' => 'admin']);
     });
 });
 
