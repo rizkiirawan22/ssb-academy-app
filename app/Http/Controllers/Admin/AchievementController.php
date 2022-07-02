@@ -22,8 +22,8 @@ class AchievementController extends Controller
                 ->of($model)
                 ->addIndexColumn()
                 ->addColumn('action', function ($model) {
-                    $btn = '<button type="button" id="Edit" class="btn btn-warning btn-sm" value="' . $model->id . '"><i class="fas fa-pencil-alt"></i></button>';
-                    $btn = $btn . '<button type="button" id="Delete" class="btn btn-danger btn-sm" value="' . $model->id . '"><i class="fas fa-trash"></i></button>';
+                    $btn = '<button type="button" id="edit" class="btn btn-warning btn-sm" value="' . $model->id . '"><i class="fas fa-pencil-alt"></i></button>';
+                    $btn = $btn . '<button type="button" id="delete" class="btn btn-danger btn-sm" value="' . $model->id . '"><i class="fas fa-trash"></i></button>';
                     return $btn;
                 })
                 ->rawColumns(['action'])
@@ -68,8 +68,9 @@ class AchievementController extends Controller
      * @param  \App\Models\Achievement  $achievement
      * @return \Illuminate\Http\Response
      */
-    public function edit(Achievement $achievement)
+    public function edit($id)
     {
+        $achievement = Achievement::find($id);
         return response()->json($achievement);
     }
 
@@ -79,9 +80,9 @@ class AchievementController extends Controller
      * @param  \App\Models\Achievement  $achievement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Achievement $achievement)
+    public function destroy($id)
     {
-        $achievement->delete();
+        Achievement::find($id)->delete();
         return response()->json(['success' => 'Data Berhasil Dihapus']);
     }
 }

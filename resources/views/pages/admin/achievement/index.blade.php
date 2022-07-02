@@ -1,14 +1,14 @@
-@extends('layouts.main', ['title' => 'Data Pelatih', 'achievement' => 'active', 'data' => 'active', 'menu' => 'menu-open'])
+@extends('layouts.main', ['title' => 'Data Prestasi', 'achievement' => 'active', 'data' => 'active', 'menu' => 'menu-open'])
 @section('content-header')
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Data Pelatih</h1>
+                <h1>Data Prestasi</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active">Data Pelatih</li>
+                    <li class="breadcrumb-item active">Data Prestasi</li>
                 </ol>
             </div>
         </div>
@@ -22,29 +22,16 @@
     </div>
     <div class="card">
         <div class="card-body table-responsive">
-            <table id="Table" class="table table-bordered table-striped">
+            <table id="table" class="table table-bordered table-striped">
                 <thead class="text-center">
                     <tr class="bg-primary">
                         <th width="5%">No</th>
+                        <th>Juara</th>
                         <th>Nama</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Telepon</th>
-                        <th>Alamat</th>
+                        <th>Tanggal</th>
                         <th width="10%"><i class="fas fa-cog"></i></th>
                     </tr>
                 </thead>
-                <tfoot class="text-center">
-                    <tr class="bg-primary">
-                        <th width="5%">No</th>
-                        <th>Nama</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Telepon</th>
-                        <th>Alamat</th>
-                        <th width="10%"><i class="fas fa-cog"></i></th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
     </div>
@@ -69,7 +56,7 @@
             autoWidth: false,
             serverSide: true,
             ajax: {
-                url: '{{ route('admin.pelatih.index') }}',
+                url: '{{ route('admin.prestasi.index') }}',
             },
             columns: [{
                     data: 'DT_RowIndex',
@@ -77,19 +64,13 @@
                     sortable: false
                 },
                 {
+                    data: 'champion'
+                },
+                {
                     data: 'name'
                 },
                 {
-                    data: 'place_of_birth'
-                },
-                {
-                    data: 'date_of_birth'
-                },
-                {
-                    data: 'phone'
-                },
-                {
-                    data: 'address'
+                    data: 'date'
                 },
                 {
                     data: 'action',
@@ -105,23 +86,19 @@
 
         function reset() {
             $('#name-error').html("");
-            $('#place-of-birth-error').html("");
-            $('#date-of-birth-error').html("");
-            $('#phone-error').html("");
-            $('#address-error').html("");
+            $('#date-error').html("");
+            $('#champion-error').html("");
             $('#modal').find('input').val("");
         }
 
         function resetError() {
             $('#name-error').html("");
-            $('#place-of-birth-error').html("");
-            $('#date-of-birth-error').html("");
-            $('#phone-error').html("");
-            $('#address-error').html("");
+            $('#date-error').html("");
+            $('#champion-error').html("");
         }
 
         $('#add').click(function() {
-            $('#title').html("Tambah Pelatih");
+            $('#title').html("Tambah Prestasi");
             $('#modal').modal('show');
             reset()
         });
@@ -132,16 +109,14 @@
             // ajax
             $.ajax({
                 type: "GET",
-                url: "/admin/pelatih/" + id + '/edit',
+                url: "/admin/prestasi/" + id + '/edit',
                 success: function(response) {
-                    $('#title').html("Ubah Ekskul");
+                    $('#title').html("Ubah Prestasi");
                     $('#modal').modal('show');
                     $('#id').val(response.id);
                     $('#name').val(response.name);
-                    $('#place_of_birth').val(response.place_of_birth);
-                    $('#date_of_birth').val(response.date_of_birth);
-                    $('#phone').val(response.phone);
-                    $('#address').val(response.address);
+                    $('#champion').val(response.champion);
+                    $('#date').val(response.date);
                 }
             });
         });
@@ -161,7 +136,7 @@
                 if (result.value) {
                     $.ajax({
                         type: "DELETE",
-                        url: "/admin/pelatih/" + id,
+                        url: "/admin/prestasi/" + id,
                         success: function(response) {
                             if (response.success) {
                                 Toast.fire({
@@ -186,22 +161,18 @@
         $('body').on('click', '#btn-save', function(event) {
             var id = $('#id').val();
             var name = $("#name").val();
-            var place_of_birth = $("#place_of_birth").val();
-            var date_of_birth = $("#date_of_birth").val();
-            var phone = $("#phone").val();
-            var address = $("#address").val();
+            var champion = $("#champion").val();
+            var date = $("#date").val();
             resetError()
             // ajax
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.pelatih.store') }}",
+                url: "{{ route('admin.prestasi.store') }}",
                 data: {
                     id: id,
                     name: name,
-                    place_of_birth: place_of_birth,
-                    date_of_birth: date_of_birth,
-                    phone: phone,
-                    address: address,
+                    champion: champion,
+                    date: date,
                 },
                 dataType: 'json',
                 success: function(data) {
@@ -209,17 +180,11 @@
                         if (data.errors.name) {
                             $('#name-error').html(data.errors.name[0]);
                         }
-                        if (data.errors.place_of_birth) {
-                            $('#place-of-birth-error').html(data.errors.place_of_birth[0]);
+                        if (data.errors.champion) {
+                            $('#champion-error').html(data.errors.champion[0]);
                         }
-                        if (data.errors.date_of_birth) {
-                            $('#date-of-birth-error').html(data.errors.date_of_birth[0]);
-                        }
-                        if (data.errors.phone) {
-                            $('#phone-error').html(data.errors.phone[0]);
-                        }
-                        if (data.errors.address) {
-                            $('#address-error').html(data.errors.address[0]);
+                        if (data.errors.date) {
+                            $('#date-error').html(data.errors.date[0]);
                         }
                     }
                     if (data.success) {

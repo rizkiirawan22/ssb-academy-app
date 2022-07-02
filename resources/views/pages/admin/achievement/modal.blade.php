@@ -22,13 +22,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="place" class="col-sm-6">Tempat</label>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" id="place" name="place">
-                            <span id="place-error" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label for="date" class="col-sm-6">Tanggal</label>
                         <div class="col-sm-12">
                             <input type="date" class="form-control" id="date" name="date">
@@ -38,7 +31,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-sm btn-flat" id="btn-save"><i class="fas fa-save"></i>
+                <button type="submit" class="btn btn-primary btn-sm btn-flat" id="btn-save"><i
+                        class="fas fa-save"></i>
                     Simpan</button>
                 <button type="button" class="btn btn-danger btn-sm btn-flat" data-dismiss="modal">
                     <i class="fas fa-times-circle"> Batal</i></span>
