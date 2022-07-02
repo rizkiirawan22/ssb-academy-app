@@ -11,3 +11,5 @@
 <script src="{{ asset('template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <!-- SweetAlert2 -->
 <script src="{{ asset('template/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+{{-- Quilljs --}}
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js" type="text/javascript"></script>

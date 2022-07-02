@@ -21,12 +21,21 @@
                 </li>
                 <li class="nav-item{{ isset($menu) ? ' ' . $menu : '' }}">
                     <a href="" class="nav-link{{ isset($data) ? ' ' . $data : '' }}">
-                        <i class="nav-icon fas fa-th-list"></i>
+                        <i class="nav-icon fas fa-th-large"></i>
                         <p>
                             Data
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.artikel.index') }}"
+                                class="nav-link{{ isset($article) ? ' ' . $article : '' }}">
+                                <i class="fas fa-list-alt nav-icon"></i>
+                                <p>Artikel</p>
+                            </a>
+                        </li>
+                    </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('admin.pelatih.index') }}"
