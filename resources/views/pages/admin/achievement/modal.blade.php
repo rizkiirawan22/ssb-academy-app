@@ -1,4 +1,4 @@
-<div class="modal fade" id="ewemodal" aria-hidden="true">
+<div class="modal fade" id="modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-primary">
@@ -38,8 +38,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-sm btn-flat" id="btn-save"><i
-                        class="fas fa-save"></i>
+                <button type="submit" class="btn btn-primary btn-sm btn-flat" id="btn-save"><i class="fas fa-save"></i>
                     Simpan</button>
                 <button type="button" class="btn btn-danger btn-sm btn-flat" data-dismiss="modal">
                     <i class="fas fa-times-circle"> Batal</i></span>
