@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
 use App\Http\Controllers\Admin\CoachController as AdminCoachController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +23,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
 
     Route::middleware(['role:admin'])->group(function () {
-        Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin']);
-        Route::resource('admin/artikel', AdminArticleController::class, ['as' => 'admin']);
+        Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin'])->except('show', 'update');
+        Route::resource('admin/artikel', AdminArticleController::class, ['as' => 'admin'])->except('show', 'update');
+        Route::resource('admin/prestasi', AdminAchievementController::class, ['as' => 'admin'])->except('show', 'update');
     });
 });
 

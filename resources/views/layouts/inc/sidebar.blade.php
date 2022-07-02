@@ -10,7 +10,8 @@
     <div class="sidebar">
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link{{ isset($dashboard) ? ' ' . $dashboard : '' }}">
                         <i class="nav-icon fas fa-home"></i>
@@ -35,13 +36,18 @@
                                 <p>Artikel</p>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('admin.pelatih.index') }}"
                                 class="nav-link{{ isset($coach) ? ' ' . $coach : '' }}">
                                 <i class="fas fa-list-alt nav-icon"></i>
                                 <p>Pelatih</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.prestasi.index') }}"
+                                class="nav-link{{ isset($achievement) ? ' ' . $achievement : '' }}">
+                                <i class="fas fa-list-alt nav-icon"></i>
+                                <p>Prestasi</p>
                             </a>
                         </li>
                     </ul>
