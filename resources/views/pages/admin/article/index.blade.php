@@ -123,7 +123,7 @@
             }]
         });
         
-        $('body').on('click', '#articleDelete', function() {
+        $('body').on('click', '#delete', function() {
             var id = $(this).val();
             Swal.fire({
                 title: 'Yakin Hapus ?',
