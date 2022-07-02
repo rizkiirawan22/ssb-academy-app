@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CoachController as AdminCoachController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::middleware(['role:admin'])->group(function () {
+        Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin']);
+    });
 });
 
 require __DIR__ . '/auth.php';
