@@ -18,7 +18,7 @@
 @endsection
 @section('content')
 <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-primary btn-sm btn-flat mb-2" id="coachAdd"><i class="fas fa-plus-circle"></i>
+    <button type="button" class="btn btn-primary btn-sm btn-flat mb-2" id="add"><i class="fas fa-plus-circle"></i>
         Tambah Data</button>
 </div>
 <div class="card">
@@ -121,13 +121,13 @@
             $('#address-error').html("");
         }
 
-        $('#coachAdd').click(function() {
+        $('#add').click(function() {
             $('#coachTitle').html("Tambah Pelatih");
             $('#coachModal').modal('show');
             reset()
         });
 
-        $('body').on('click', '#coachEdit', function() {
+        $('body').on('click', '#edit', function() {
             var id = $(this).val();
             reset()
             // ajax
@@ -147,7 +147,7 @@
             });
         });
 
-        $('body').on('click', '#coachDelete', function() {
+        $('body').on('click', '#delete', function() {
             var id = $(this).val();
 
             Swal.fire({

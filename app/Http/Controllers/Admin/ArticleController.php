@@ -28,7 +28,7 @@ class ArticleController extends Controller
                 })
                 ->addColumn('action', function ($model) {
                     $btn = '<a href="' . route('admin.artikel.edit', $model->id) . '" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>';
-                    $btn = $btn . '<button type="button" id="articleDelete" class="btn btn-danger btn-sm" value="' . $model->id . '"><i class="fas fa-trash"></i></button>';
+                    $btn = $btn . '<button type="button" id="delete" class="btn btn-danger btn-sm" value="' . $model->id . '"><i class="fas fa-trash"></i></button>';
                     return $btn;
                 })
                 ->rawColumns(['image', 'content', 'action'])
