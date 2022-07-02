@@ -1,5 +1,5 @@
 @extends('layouts.main', ['title' => 'Data Artikel', 'article' => 'active', 'data' => 'active', 'menu' => 'menu-open'])
-@section('content-header')i
+@section('content-header')
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
