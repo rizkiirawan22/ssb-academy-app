@@ -10,6 +10,10 @@ use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationContro
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PresenceController as AdminPresenceController;
 use App\Http\Controllers\Member\MemberController;
+use App\Models\Achievement;
+use App\Models\Coach;
+use App\Models\Finance;
+use App\Models\Member;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +37,13 @@ Route::group(['namesapace' => 'home'], function () {
 Route::get('/login', fn () => redirect()->route('login'));
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+    Route::get('/dashboard', fn () => view('dashboard', [
+        'count_achievement' => Achievement::count(),
+        'count_coach' => Coach::count(),
+        'count_member' => Member::where('status', 2)->count(),
+        'money' => Finance::where('type', 'income')->sum('amount') - Finance::where('type', 'expense')->sum('amount'),
+        'member' => Member::where('email', auth()->user()->email)->first()
+    ]))->name('dashboard');
 
     Route::middleware(['role:admin'])->group(function () {
         Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin'])->except('show', 'update');
