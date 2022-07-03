@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionControll
 use App\Http\Controllers\Admin\FinanceController as AdminFinanceController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
 use App\Http\Controllers\Admin\PresenceController as AdminPresenceControllerController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn () => view('frontend.home'));
+Route::group(['namesapace' => 'home'], function() {
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/anggota', [HomeController::class, 'anggota']);
+    Route::get('/artikel', [HomeController::class, 'artikel']);
+    Route::get('/detail/{article}', [HomeController::class, 'show']);
+    Route::get('/kompetisi', [HomeController::class, 'kompetisi']);
+});
 Route::get('/login', fn () => redirect()->route('login'));
 
 Route::middleware(['auth'])->group(function () {
