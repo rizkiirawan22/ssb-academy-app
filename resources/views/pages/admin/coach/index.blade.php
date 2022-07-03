@@ -35,17 +35,6 @@
                     <th width="10%"><i class="fas fa-cog"></i></th>
                 </tr>
             </thead>
-            <tfoot class="text-center">
-                <tr class="bg-primary">
-                    <th width="5%">No</th>
-                    <th>Nama</th>
-                    <th>Tempat Lahir</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Telepon</th>
-                    <th>Alamat</th>
-                    <th width="10%"><i class="fas fa-cog"></i></th>
-                </tr>
-            </tfoot>
         </table>
     </div>
 </div>

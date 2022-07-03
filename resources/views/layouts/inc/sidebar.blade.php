@@ -19,6 +19,7 @@
                         </p>
                     </a>
                 </li>
+                @role('admin')
                 <li class="nav-item{{ isset($menu) ? ' ' . $menu : '' }}">
                     <a href="" class="nav-link{{ isset($data) ? ' ' . $data : '' }}">
                         <i class="nav-icon fas fa-th-large"></i>
@@ -31,14 +32,14 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.artikel.index') }}"
                                 class="nav-link{{ isset($article) ? ' ' . $article : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-newspaper nav-icon"></i>
                                 <p>Artikel</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.pelatih.index') }}"
                                 class="nav-link{{ isset($coach) ? ' ' . $coach : '' }}">
-                                <i class="fas fa-user-cog nav-icon"></i>
+                                <i class="fas fa-user nav-icon"></i>
                                 <p>Pelatih</p>
                             </a>
                         </li>
@@ -60,14 +61,14 @@
                             <a href="{{ route('admin.organisasi.index') }}"
                                 class="nav-link{{ isset($org) ? ' ' . $org : '' }}">
                                 <i class="fas fa-futbol nav-icon"></i>
-                                <p>SSB</p>
+                                <p>Organisasi</p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.absensi.index') }}"
-                        class="nav-link{{ isset($presence) ? ' ' . $presence : '' }}">
+                        class="nav-link{{ isset($absensi) ? ' ' . $absensi : '' }}">
                         <i class="nav-icon fas fa-user-clock"></i>
                         <p>
                             Absensi
@@ -83,6 +84,17 @@
                         </p>
                     </a>
                 </li>
+                @endrole
+                @role('member')
+                <li class="nav-item">
+                    <a href="{{ route('anggota.register') }}" class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
+                        <i class="nav-icon fas fa-user-edit"></i>
+                        <p>
+                            Daftar
+                        </p>
+                    </a>
+                </li>
+                @endrole
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

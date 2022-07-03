@@ -41,17 +41,6 @@
                                     <th width="10%"><i class="fas fa-cog"></i></th>
                                 </tr>
                             </thead>
-                            <tfoot class="bg-primary text-center">
-                                <tr>
-                                    <th width="5%">No</th>
-                                    <th>Gambar</th>
-                                    <th>Judul</th>
-                                    <th>Tanggal</th>
-                                    <th>Isi</th>
-                                    <th>Author</th>
-                                    <th width="10%"><i class="fas fa-cog"></i></th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>
