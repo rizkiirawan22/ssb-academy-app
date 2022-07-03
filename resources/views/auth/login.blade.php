@@ -51,20 +51,13 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
-                            </div>
-                        </div>
+                    <div class="row d-flex justify-content-end">
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
                     </div>
                 </form>
+                <a href="/register" class="text-center">Daftar anggota baru...</a>
             </div>
         </div>
     </div>
