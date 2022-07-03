@@ -10,8 +10,7 @@
     <div class="sidebar">
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link{{ isset($dashboard) ? ' ' . $dashboard : '' }}">
                         <i class="nav-icon fas fa-home"></i>
@@ -39,32 +38,41 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.pelatih.index') }}"
                                 class="nav-link{{ isset($coach) ? ' ' . $coach : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-user-cog nav-icon"></i>
                                 <p>Pelatih</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.prestasi.index') }}"
                                 class="nav-link{{ isset($achievement) ? ' ' . $achievement : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-trophy nav-icon"></i>
                                 <p>Prestasi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.kompetisi.index') }}"
                                 class="nav-link{{ isset($kompetisi) ? ' ' . $kompetisi : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-calendar-alt nav-icon"></i>
                                 <p>Kompetisi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.organisasi.index') }}"
                                 class="nav-link{{ isset($org) ? ' ' . $org : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-futbol nav-icon"></i>
                                 <p>SSB</p>
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.absensi.index') }}"
+                        class="nav-link{{ isset($presence) ? ' ' . $presence : '' }}">
+                        <i class="nav-icon fas fa-user-clock"></i>
+                        <p>
+                            Absensi
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.keuangan.index') }}"
