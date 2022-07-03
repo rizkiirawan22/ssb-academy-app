@@ -10,8 +10,7 @@
     <div class="sidebar">
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link{{ isset($dashboard) ? ' ' . $dashboard : '' }}">
                         <i class="nav-icon fas fa-home"></i>
@@ -20,6 +19,7 @@
                         </p>
                     </a>
                 </li>
+                @role('admin')
                 <li class="nav-item{{ isset($menu) ? ' ' . $menu : '' }}">
                     <a href="" class="nav-link{{ isset($data) ? ' ' . $data : '' }}">
                         <i class="nav-icon fas fa-th-large"></i>
@@ -84,6 +84,18 @@
                         </p>
                     </a>
                 </li>
+                @endrole
+                @role('member')
+                <li class="nav-item">
+                    <a href="{{ route('anggota.registrasi.index') }}"
+                        class="nav-link{{ isset($register) ? ' ' . $register : '' }}">
+                        <i class="nav-icon fas fa-money-bill"></i>
+                        <p>
+                            Daftar
+                        </p>
+                    </a>
+                </li>
+                @endrole
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
