@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::middleware(['role:member'])->group(function () {
+        Route::get('anggota/profile', [MemberController::class, 'profile'])->name('anggota.profile');
         Route::get('anggota/data-diri', [MemberController::class, 'personalData'])->name('anggota.personalData');
         Route::post('anggota/daftar', [MemberController::class, 'registerStore'])->name('anggota.registerStore');
         Route::get('anggota/daftar', [MemberController::class, 'register'])->name('anggota.register');
