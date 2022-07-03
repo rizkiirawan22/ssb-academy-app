@@ -87,9 +87,8 @@
                 @endrole
                 @role('member')
                 <li class="nav-item">
-                    <a href="{{ route('anggota.registrasi.index') }}"
-                        class="nav-link{{ isset($register) ? ' ' . $register : '' }}">
-                        <i class="nav-icon fas fa-money-bill"></i>
+                    <a href="{{ route('anggota.register') }}" class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
+                        <i class="nav-icon fas fa-user-edit"></i>
                         <p>
                             Daftar
                         </p>
