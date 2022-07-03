@@ -18,7 +18,7 @@ class CreateCompetitionsTable extends Migration
             $table->string('name');
             $table->string('place');
             $table->date('date');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

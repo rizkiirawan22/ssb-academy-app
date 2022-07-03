@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
 use App\Http\Controllers\Admin\CoachController as AdminCoachController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,8 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin'])->except('show', 'update');
         Route::resource('admin/artikel', AdminArticleController::class, ['as' => 'admin'])->except('show');
         Route::resource('admin/prestasi', AdminAchievementController::class, ['as' => 'admin'])->except('show', 'update');
-        Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->except('show', 'create', 'store', 'destroy');
+        Route::resource('admin/kompetisi', AdminCompetitionController::class, ['as' => 'admin'])->except('show', 'update');
+        Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->only('update', 'edit', 'index');
     });
 });
 
