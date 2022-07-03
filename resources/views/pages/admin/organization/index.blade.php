@@ -31,17 +31,6 @@
                     <th width="10%"><i class="fas fa-cog"></i></th>
                 </tr>
             </thead>
-            <tfoot class="text-center">
-                <tr class="bg-primary">
-                    <th>Logo</th>
-                    <th>Nama</th>
-                    <th>Visi</th>
-                    <th>Misi</th>
-                    <th>Alamat</th>
-                    <th>Tentang</th>
-                    <th width="10%"><i class="fas fa-cog"></i></th>
-                </tr>
-            </tfoot>
         </table>
     </div>
 </div>

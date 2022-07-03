@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionController;
 use App\Http\Controllers\Admin\FinanceController as AdminFinanceController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
+use App\Http\Controllers\Admin\PresenceController as AdminPresenceControllerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin/kompetisi', AdminCompetitionController::class, ['as' => 'admin'])->except('show', 'update');
         Route::resource('admin/keuangan', AdminFinanceController::class, ['as' => 'admin'])->except('show', 'update');
         Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->only('update', 'edit', 'index');
+        Route::resource('admin/absensi', AdminPresenceController::class, ['as' => 'admin']);
     });
 });
 

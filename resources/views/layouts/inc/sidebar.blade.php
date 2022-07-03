@@ -53,18 +53,27 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.kompetisi.index') }}"
                                 class="nav-link{{ isset($kompetisi) ? ' ' . $kompetisi : '' }}">
-                                <i class="fas fa-gamepad nav-icon"></i>
+                                <i class="fas fa-calendar-alt nav-icon"></i>
                                 <p>Kompetisi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.organisasi.index') }}"
                                 class="nav-link{{ isset($org) ? ' ' . $org : '' }}">
-                                <i class="fas fa-sitemap nav-icon"></i>
+                                <i class="fas fa-futbol nav-icon"></i>
                                 <p>Organisasi</p>
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.absensi.index') }}"
+                        class="nav-link{{ isset($presence) ? ' ' . $presence : '' }}">
+                        <i class="nav-icon fas fa-user-clock"></i>
+                        <p>
+                            Absensi
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.keuangan.index') }}"
