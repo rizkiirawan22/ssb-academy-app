@@ -14,7 +14,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $article->title }}</h5>
               <p class="card-text" style="max-height: 20px;">{!! $article->content !!}</p>
-              <a href="#" class="btn btn-primary">Selengkapnya</a>
+              <a href="/detail/{{ $article->id }}" class="btn btn-primary">Selengkapnya</a>
             </div>
           </div>
         </div>

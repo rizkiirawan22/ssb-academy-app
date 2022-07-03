@@ -8,12 +8,11 @@
     <h1>Daftar Kompetisi</h1>
     <div class="row">
       @foreach ($competitions as $competition)  
-      <div class="card">
-          <div class="card-header">
-            Kompetisi
+      <div class="card my-2">
+          <div class="card-header bg-info">
+            <h5 class="card-title">{{ $competition->name }}</h5>
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ $competition->name }}</h5>
             <p class="card-text"><i class="fa fa-map-marker"></i> {{ $competition->place }}</p>
             <p><i class="fa fa-calendar"></i> {{ $competition->date }}</p>
             <p>{{ $competition->description }}</p>

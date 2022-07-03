@@ -6,6 +6,7 @@ use App\Models\Achievement;
 use App\Models\Article;
 use App\Models\Coach;
 use App\Models\Competition;
+use App\Models\Member;
 use App\Models\Organization;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,8 @@ class HomeController extends Controller
     public function anggota()
     {
         $title = "Anggota";
-        return view('frontend.anggota', ['organization' => $this->organization], compact('title'));
+        $members = Member::where('status', 2)->get();
+        return view('frontend.anggota', ['organization' => $this->organization], compact('title', 'members'));
     }
 
     public function kompetisi()
