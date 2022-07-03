@@ -72,7 +72,7 @@ class ArticleController extends Controller
         $rules = [
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required|image|file|mimes:jpg,jpeg,png|max:5120',
+            'image' => 'image|file|mimes:jpg,jpeg,png|max:5120',
         ];
         $validatedData = $request->validate($rules);
         $article = Article::find($id);
