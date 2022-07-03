@@ -13,4 +13,9 @@ class Member extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function presenceDetail()
+    {
+        return $this->hasMany(PresenceDetail::class);
+    }
 }
