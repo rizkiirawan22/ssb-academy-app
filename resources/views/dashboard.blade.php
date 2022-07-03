@@ -65,12 +65,16 @@
             <div class="row">
                 <div class="col-12 image-head">
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img src="{{ asset('storage/' . $member->photo) }}" class="rounded-circle img-fluid col-2"
-                            alt="User Image">
+                        @if (isset($member->photo))
+                            <img src="{{ asset('storage/' . $member->photo) }}" class="rounded-circle img-fluid col-2"
+                                alt="User Image">
+                        @else
+                            <img src="{{ asset('img/avatar.png') }}" class="rounded-circle img-fluid col-2" alt="User Image">
+                        @endif
                     </div>
                 </div>
                 <div class="col-12 head text-center">
-                    <span>Hi, {{ $member->name }} !</span>
+                    <span>Hi, {{ auth()->user()->name }} !</span>
                 </div>
                 <div class="col-12 head text-center">
                     <span>Welcome :)</span>
