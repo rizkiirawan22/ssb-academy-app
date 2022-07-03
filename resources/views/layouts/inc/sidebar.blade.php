@@ -86,14 +86,38 @@
                 </li>
                 @endrole
                 @role('member')
+                @if (auth()->user()->member()->first())
+                @if (auth()->user()->member()->first()->status == 1)
+                <li class="nav-item">
+                    <a href="{{ route('anggota.personalData') }}"
+                        class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
+                        <i class="nav-icon fas fa-user-edit"></i>
+                        <p>
+                            Data Diri
+                        </p>
+                    </a>
+                </li>
+                @elseif(auth()->user()->member()->first()->status == 2)
+                <li class="nav-item">
+                    <a href="{{ route('anggota.personalData') }}"
+                        class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
+                        <i class="nav-icon fas fa-user-edit"></i>
+                        <p>
+                            Profile
+                        </p>
+                    </a>
+                </li>
+                @endif
+                @else
                 <li class="nav-item">
                     <a href="{{ route('anggota.register') }}" class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
                         <i class="nav-icon fas fa-user-edit"></i>
                         <p>
-                            Daftar
+                            Daftar Anggota
                         </p>
                     </a>
                 </li>
+                @endif
                 @endrole
             </ul>
         </nav>
