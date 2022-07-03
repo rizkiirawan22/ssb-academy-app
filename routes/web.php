@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionController;
 use App\Http\Controllers\Admin\FinanceController as AdminFinanceController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
-use App\Http\Controllers\Admin\PresenceController as AdminPresenceControllerController;
+use App\Http\Controllers\Admin\PresenceController as AdminPresenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
