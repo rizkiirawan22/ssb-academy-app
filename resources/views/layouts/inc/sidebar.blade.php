@@ -10,8 +10,7 @@
     <div class="sidebar">
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="/dashboard" class="nav-link{{ isset($dashboard) ? ' ' . $dashboard : '' }}">
                         <i class="nav-icon fas fa-home"></i>
@@ -48,6 +47,13 @@
                                 class="nav-link{{ isset($achievement) ? ' ' . $achievement : '' }}">
                                 <i class="fas fa-list-alt nav-icon"></i>
                                 <p>Prestasi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.organisasi.index') }}"
+                                class="nav-link{{ isset($org) ? ' ' . $org : '' }}">
+                                <i class="fas fa-list-alt nav-icon"></i>
+                                <p>SSB</p>
                             </a>
                         </li>
                     </ul>
