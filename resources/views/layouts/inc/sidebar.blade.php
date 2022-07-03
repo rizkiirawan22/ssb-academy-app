@@ -68,7 +68,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.absensi.index') }}"
-                        class="nav-link{{ isset($presence) ? ' ' . $presence : '' }}">
+                        class="nav-link{{ isset($absensi) ? ' ' . $absensi : '' }}">
                         <i class="nav-icon fas fa-user-clock"></i>
                         <p>
                             Absensi
