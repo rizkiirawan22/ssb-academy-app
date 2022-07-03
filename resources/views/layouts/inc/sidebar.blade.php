@@ -76,6 +76,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.anggota.index') }}"
+                        class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Anggota
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.keuangan.index') }}"
                         class="nav-link{{ isset($keuangan) ? ' ' . $keuangan : '' }}">
                         <i class="nav-icon fas fa-money-bill"></i>

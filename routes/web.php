@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CoachController as AdminCoachController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionController;
 use App\Http\Controllers\Admin\FinanceController as AdminFinanceController;
+use App\Http\Controllers\Admin\MemberController as AdminMemberController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PresenceController as AdminPresenceController;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namesapace' => 'home'], function() {
+Route::group(['namesapace' => 'home'], function () {
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/anggota', [HomeController::class, 'anggota']);
     Route::get('/artikel', [HomeController::class, 'artikel']);
@@ -42,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin/keuangan', AdminFinanceController::class, ['as' => 'admin'])->except('show', 'update');
         Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->only('update', 'edit', 'index');
         Route::resource('admin/absensi', AdminPresenceController::class, ['as' => 'admin']);
+        Route::get('admin/anggota/terima{id}', [AdminMemberController::class, 'memberAccept'])->name('admin.anggota.accept');
+        Route::resource('admin/anggota', AdminMemberController::class, ['as' => 'admin']);
     });
 
     Route::middleware(['role:member'])->group(function () {
