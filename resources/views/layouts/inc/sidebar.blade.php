@@ -108,8 +108,7 @@
                 </li>
                 @elseif(auth()->user()->member()->first()->status == 2)
                 <li class="nav-item">
-                    <a href="{{ route('anggota.personalData') }}"
-                        class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
+                    <a href="{{ route('anggota.profile') }}" class="nav-link{{ isset($member) ? ' ' . $member : '' }}">
                         <i class="nav-icon fas fa-user-edit"></i>
                         <p>
                             Profile
