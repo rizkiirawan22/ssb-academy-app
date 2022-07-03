@@ -17,7 +17,7 @@ class AchievementController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $model = achievement::all();
+            $model = Achievement::all();
             return Datatables()
                 ->of($model)
                 ->addIndexColumn()
