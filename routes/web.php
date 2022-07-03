@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionControll
 use App\Http\Controllers\Admin\FinanceController as AdminFinanceController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
 use App\Http\Controllers\Admin\PresenceController as AdminPresenceController;
-use App\Http\Controllers\Member\RegistrantController;
+use App\Http\Controllers\Member\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +38,9 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::middleware(['role:member'])->group(function () {
-        Route::resource('anggota/registrasi', RegistrantController::class, ['as' => 'anggota']);
+        Route::post('anggota/daftar', [MemberController::class, 'registerStore'])->name('anggota.registerStore');
+        Route::get('anggota/daftar', [MemberController::class, 'register'])->name('anggota.register');
+        Route::resource('anggota/anggota', MemberController::class, ['as' => 'anggota']);
     });
 });
 
