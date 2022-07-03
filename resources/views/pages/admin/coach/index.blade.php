@@ -135,7 +135,7 @@
                 type: "GET",
                 url: "/admin/pelatih/" + id + '/edit',
                 success: function(response) {
-                    $('#coachTitle').html("Ubah Ekskul");
+                    $('#coachTitle').html("Ubah Pelatih");
                     $('#coachModal').modal('show');
                     $('#id').val(response.id);
                     $('#name').val(response.name);
