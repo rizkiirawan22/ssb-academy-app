@@ -32,36 +32,36 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.artikel.index') }}"
                                 class="nav-link{{ isset($article) ? ' ' . $article : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-newspaper nav-icon"></i>
                                 <p>Artikel</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.pelatih.index') }}"
                                 class="nav-link{{ isset($coach) ? ' ' . $coach : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-user nav-icon"></i>
                                 <p>Pelatih</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.prestasi.index') }}"
                                 class="nav-link{{ isset($achievement) ? ' ' . $achievement : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-trophy nav-icon"></i>
                                 <p>Prestasi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.kompetisi.index') }}"
                                 class="nav-link{{ isset($kompetisi) ? ' ' . $kompetisi : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
+                                <i class="fas fa-gamepad nav-icon"></i>
                                 <p>Kompetisi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.organisasi.index') }}"
                                 class="nav-link{{ isset($org) ? ' ' . $org : '' }}">
-                                <i class="fas fa-list-alt nav-icon"></i>
-                                <p>SSB</p>
+                                <i class="fas fa-sitemap nav-icon"></i>
+                                <p>Organisasi</p>
                             </a>
                         </li>
                     </ul>
