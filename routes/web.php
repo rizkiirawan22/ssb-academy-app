@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CompetitionController as AdminCompetitionControll
 use App\Http\Controllers\Admin\FinanceController as AdminFinanceController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
 use App\Http\Controllers\Admin\PresenceController as AdminPresenceController;
+use App\Http\Controllers\Member\RegistrantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,10 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin/keuangan', AdminFinanceController::class, ['as' => 'admin'])->except('show', 'update');
         Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->only('update', 'edit', 'index');
         Route::resource('admin/absensi', AdminPresenceController::class, ['as' => 'admin']);
+    });
+
+    Route::middleware(['role:member'])->group(function () {
+        Route::resource('anggota/registrasi', RegistrantController::class, ['as' => 'anggota']);
     });
 });
 
