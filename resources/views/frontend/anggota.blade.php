@@ -3,7 +3,7 @@
 
 @include('frontend.layouts.navbar')
 
-<section class="mt-5">
+<section class="mt-5 py-4">
   <div class="container">
     <h1>Anggota SSB</h1>
     <div class="row">
