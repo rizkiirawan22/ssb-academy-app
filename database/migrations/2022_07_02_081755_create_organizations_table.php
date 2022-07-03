@@ -17,8 +17,8 @@ class CreateOrganizationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('logo');
-            $table->string("mission");
-            $table->string('vision');
+            $table->text('mission');
+            $table->text('vision');
             $table->string('address');
             $table->string('about');
             $table->timestamps();
