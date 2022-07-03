@@ -27,7 +27,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin/pelatih', AdminCoachController::class, ['as' => 'admin'])->except('show', 'update');
         Route::resource('admin/artikel', AdminArticleController::class, ['as' => 'admin'])->except('show');
         Route::resource('admin/prestasi', AdminAchievementController::class, ['as' => 'admin'])->except('show', 'update');
-        Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->except('show', 'update');
+        Route::resource('admin/organisasi', AdminOrganizationController::class, ['as' => 'admin'])->except('show', 'create', 'store', 'destroy');
     });
 });
 
