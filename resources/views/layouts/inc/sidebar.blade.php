@@ -66,6 +66,15 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.keuangan.index') }}"
+                        class="nav-link{{ isset($keuangan) ? ' ' . $keuangan : '' }}">
+                        <i class="nav-icon fas fa-money-bill"></i>
+                        <p>
+                            Keuangan
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
